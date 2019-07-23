@@ -39,6 +39,16 @@ body{
 *, *::before, *::after{
   box-sizing: border-box;
 }
+/* 공통 검색 폼 */
+input[type="search"]{
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 5px 10px;
+  height: 30px;
+}
+.search-form label, input[type="search"], .btn-search{
+  vertical-align: middle;
+}
 /* 모바일 레이아웃 */
 @media screen and (min-width:320px) and (max-width:999px){
   .header{
@@ -47,14 +57,18 @@ body{
     display: flex;
     flex-direction: row; /*가로가 기본(row)*/
     flex-wrap: wrap; /*줄바꿈 허용*/
+    padding-bottom: 1em;
   }
   .logo, .member, .search-form{
     width: 100%;
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   /* 모바일 로고 */
   .logo{
-    background: yellow;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
   }
 
   /* 모바일 맴버 링크 */
@@ -73,8 +87,15 @@ body{
     margin-left: 1em;
   }
   /* 모바일 검색 폼 */
-  .search-form{
-    background: skyblue;
+  input[type="search"]{
+    width: calc(100% - 35px);
+  }
+  .btn-search{
+    background: transparent url('./images/btn_search.png') no-repeat;
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    border: 0;
   }
 }
 /* 데스크탑 레이아웃 */
@@ -121,21 +142,19 @@ body{
     text-align: right;
   }
   input[type="search"]{
-    border: 1px solid #666;
-    border-radius: 5px;
     width: 400px;
-    padding: 5px 10px;
-    height: 28px;
   }
   .btn-search{
     /* 버튼은 높이를 주는게 좋음 브라우저마다 다르기때문에 */
-    width: 50px;
     padding: 5px 10px;
     border: 1px solid #666;
     background: #988574;
     border-radius: 5px;
     color: #fff;
-    height: 28px;
+    height: 30px;
     /* display: block; */
+  }
+  .btn-search::before{
+    content: '검색';
   }
 }
