@@ -2,6 +2,21 @@
 @import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
 @import url('./normalize.css');
 @import url('./reset.css');
+/* 숨김 컨텐츠 */
+/* legend{
+  position: absolute;
+  left: -9999em;
+} */
+/* .a11y-hidden{숨김css} */
+legend, .a11y-hidden{
+  background: pink;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
 
 /* inherit : 부모에게 상속받은 값을 저장 ie6은 상속이 안됨 */
 /* 링크 스타일 */
@@ -19,4 +34,108 @@ body{
   font-size: 1.4rem;;
   background: #fff;
   color: #181818;
+}
+/* 공통 스타일 */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+/* 모바일 레이아웃 */
+@media screen and (min-width:320px) and (max-width:999px){
+  .header{
+    background: #38302e;
+    color: #fff;
+    display: flex;
+    flex-direction: row; /*가로가 기본(row)*/
+    flex-wrap: wrap; /*줄바꿈 허용*/
+  }
+  .logo, .member, .search-form{
+    width: 100%;
+    padding: 0 20px;
+  }
+  /* 모바일 로고 */
+  .logo{
+    background: yellow;
+  }
+
+  /* 모바일 맴버 링크 */
+  .member{
+    background: #988574;
+    /* margin: 0 -20px; flex가 아닐때 사용 */
+    order: -1;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .member a{
+    display: block;
+    padding: 5px 2px;
+    margin-left: 1em;
+  }
+  /* 모바일 검색 폼 */
+  .search-form{
+    background: skyblue;
+  }
+}
+/* 데스크탑 레이아웃 */
+@media screen and (min-width: 1000px){
+  .header{
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  /* 데스크탑 로고 */
+  .logo{
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%);가운데 정렬 그렇지만 모던 브라우저에서만 사용가능 */
+    margin: -29px; /* 하위브라우저에서 사용하는 방식 */
+    left: 15px;
+  }
+  .logo img{
+    vertical-align: top; 
+  }
+  /* 데스크탑 맴버링크 */
+  .member{
+    font-size: 0; /*li 사이의 공백*/
+    text-align: right;/*block한테 / li는 vertical-align으로 사용한다.*/
+    padding: 2px 0;
+    margin-right: -1.4rem;
+    /* position: relative;
+    left: 1.4rem; */
+  }
+  .member li, .member a{
+    display: inline-block;
+  }
+  .member li{
+    font-size: 1.4rem;
+  }
+  .member li:nth-child(n+2)::before{
+    content: '|';
+  }
+  .member a{
+    padding: 0.5em 1em;
+  }
+  /* 데스크탑 검색 폼 */
+  .search-form{
+    text-align: right;
+  }
+  input[type="search"]{
+    border: 1px solid #666;
+    border-radius: 5px;
+    width: 400px;
+    padding: 5px 10px;
+    height: 28px;
+  }
+  .btn-search{
+    /* 버튼은 높이를 주는게 좋음 브라우저마다 다르기때문에 */
+    width: 50px;
+    padding: 5px 10px;
+    border: 1px solid #666;
+    background: #988574;
+    border-radius: 5px;
+    color: #fff;
+    height: 28px;
+    /* display: block; */
+  }
 }
