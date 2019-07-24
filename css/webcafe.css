@@ -98,7 +98,84 @@ input[type="search"]{
 .twitter-heading .en-heading {
   color: #6aaee6;
 }
-
+/* 공통 추천서적 */
+.recommend-book-cover{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+.recommend-book-cover figcaption{
+  font-weight: 700;
+  margin: 1em;
+}
+.recommend-book-detail{
+  text-align: center;
+}
+.recommend-book-author, .recommend-book-author-name{
+  display: inline;
+}
+.recommend-book-grade{
+  font-size: 2rem;
+  color: #abd375;
+}
+[class$="summary"]{/* ^시작, *포함, $끝나는 */
+  line-height: 1.5;/*안정적 1.6배*/
+  margin: 1em 0;
+}
+/* 공통 새소식 반응형 비디오 */
+.iframe-container{
+  width: 100%;
+  height: 0;
+  padding-top: calc(9/16 * 100%);
+  position: relative;
+}
+.rwd-iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.news-date{
+  display: block;
+  text-align: right;
+}
+/* 공통 게시판 */
+.board{
+  position: relative;
+}
+.board-list a, .board-list time{
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  top: 5px;
+}
+.board-list a{
+  width: calc(100% - 105px);
+  white-space: nowrap;
+  text-overflow: ellipsis; /*말줄임표*/
+}
+.board-more{
+  position: absolute;
+  top: 1.5em;
+  right: 0;
+}
+/* 인기사이트 공통 */
+.favorite-site-list {
+  overflow: hidden;
+}
+.favorite-site-list li {
+  counter-increment: number; /*변수 개념 li 가상요소 선택자를 이용해서 첫번째가 1로 카운터 됨 */
+  margin: 1em 0;
+}
+.favorite-site-list li::before {
+  content: counter(number, decimal); /*decimal=10진수*/
+  background: #eea60a;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+}
 /* 모바일 레이아웃 */
 @media screen and (min-width:320px) and (max-width:999px){
   .header{
@@ -222,8 +299,18 @@ input[type="search"]{
   .menu-act .sub-menu{
     display: block;
   }
+  /* 모바일 메인 컨텐츠 레이아웃 */
+  .main{
+    padding: 0 20px;
+  }
+  /* 모바일 추천서적 */
+  .recommend-book-cover{
+    width: 50%;
+  }
+
+  
 }
-/* 데스크탑 레이아웃 */
+/* 데스크탑 스타일 */
 @media screen and (min-width: 1000px){
   /* 데스크탑 레이아웃 */
   .header, .menu, .main, .slogan{
