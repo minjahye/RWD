@@ -50,6 +50,55 @@ input[type="search"]{
 .search-form label, input[type="search"], .btn-search{
   vertical-align: middle;
 }
+/* 공통 반응형 콘텐츠 */
+.rwd-img{
+  max-width: 100%;
+  height: auto;
+}
+/* 공통 메인 콘텐츠 섹션 제목 */
+.main-section-heading{
+  background:  url('./images/sprite_main.png') no-repeat; /*반복출력방지*/
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-left: 65px; /*이미지와 겹치지 않게하기위해서 padding으로 밀어넣음*/
+  min-height: 60px;
+  margin: 1em 0;
+}
+.en-heading{
+  display: block;
+}
+.recommend-book-heading {
+  background-position: 0 0;
+}
+.recommend-book-heading .en-heading {
+  color: #abd375;
+}
+.news-heading {
+  background-position: 0 -230px;
+}
+.news-heading .en-heading {
+  color: #e8ca58;
+}
+.board-heading {
+  background-position: 0 -115px;
+  margin-bottom: 0.5em;
+}
+.board-heading .en-heading {
+  color: #c7b39a;
+}
+.favorite-site-heading {
+  background-position: 0 -345px;
+}
+.favorite-site-heading .en-heading {
+  color: #eea60a;
+}
+.twitter-heading {
+  background-position: 0 -460px;
+}
+.twitter-heading .en-heading {
+  color: #6aaee6;
+}
+
 /* 모바일 레이아웃 */
 @media screen and (min-width:320px) and (max-width:999px){
   .header{
