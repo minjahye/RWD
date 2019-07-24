@@ -28,12 +28,12 @@ if(viewport.matches){
   });
 
   li.on('click keydown', function(e){
-    if(e.type === 'click' || (e.type === 'keydown' && e.keyCode === 13)){
     // e.preventDefault();
-    li.removeClass('menu-act');
-    span.removeClass('icon-minus').addClass('icon-plus');
-    $(this).find('menu-item').removeClass('icon-plus').addClass('icon-minus');
-    $(this).addClass('menu-act');
+    if(e.type === 'click' || (e.type === 'keydown' && e.keyCode === 13)){
+      li.removeClass('menu-act');
+      span.removeClass('icon-minus').addClass('icon-plus');
+      $(this).find('.menu-item').removeClass('icon-plus').addClass('icon-minus');
+      $(this).addClass('menu-act');
     }
   });
 
